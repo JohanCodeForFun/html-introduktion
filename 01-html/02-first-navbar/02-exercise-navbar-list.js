@@ -10,9 +10,22 @@ function testNavbar() {
       const ul = nav.querySelector('ul');
       if (ul) {
         const links = ul.querySelectorAll('a');
-        if (links.length >= 3) {
+                if (links.length >= 3) {
           foundNavbar = true;
-          results.push(`<div class="pass">Navbar i &lt;nav&gt;: ✔️ Oordnad lista med ${links.length} länkar</div>`);
+                    // Alla länkar ska ha textinnehåll och href-attribut
+                    const emptyText = Array.from(links).filter(a => !a.textContent.trim()).length;
+                    const missingHref = Array.from(links).filter(a => {
+                      const href = a.getAttribute('href');
+                      return !href || !href.trim();
+                    }).length;
+                    if (emptyText === 0 && missingHref === 0) {
+                      results.push(`<div class="pass">Navbar i &lt;nav&gt;: ✔️ ${links.length} länkar – alla har href och text</div>`);
+                    } else {
+                      const parts = [];
+                      if (missingHref > 0) parts.push(`${missingHref} saknar href`);
+                      if (emptyText > 0) parts.push(`${emptyText} saknar text`);
+                      results.push(`<div class="fail">Navbar i &lt;nav&gt;: ❌ Länkar: ${parts.join(', ')}</div>`);
+                    }
           break;
         }
       }
@@ -31,7 +44,12 @@ function testOrderedList() {
   if (ol) {
     const items = ol.querySelectorAll('li');
     if (items.length >= 3) {
-      results.push(`<div class="pass">Ordnad lista: ✔️ Hittade ${items.length} punkter</div>`);
+      const emptyLi = Array.from(items).filter(li => !li.textContent.trim()).length;
+      if (emptyLi === 0) {
+        results.push(`<div class="pass">Ordnad lista: ✔️ Hittade ${items.length} punkter med innehåll</div>`);
+      } else {
+        results.push(`<div class="fail">Ordnad lista: ❌ ${emptyLi} punkter saknar innehåll</div>`);
+      }
     } else {
       results.push(`<div class="fail">Ordnad lista: ❌ Hittade ${items.length}, förväntade minst 3</div>`);
     }

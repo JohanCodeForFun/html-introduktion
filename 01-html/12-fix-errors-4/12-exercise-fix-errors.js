@@ -9,12 +9,19 @@ const results12 = [];
   if (!section) {
     results12.push('<div class="fail">❌ Hittade ingen &lt;section&gt; i källtexten</div>');
   } else {
-    // nav + a: minst 3 korrekt par av <a></a>
+    // nav + a: minst 3 korrekt par av <a></a> med href och text
     if (TU.hasPair(section, 'nav')) {
       const navInner = TU.firstPairInner(section, 'nav');
       const aPairs = navInner.match(/<a\b[^>]*>[\s\S]*?<\/a>/gi) || [];
-  const ok = aPairs.length >= 3 && aPairs.every(a => TU.stripTags(a).length > 0);
-      results12.push(ok ? '<div class="pass">✔️ Nav-länkar har starttag, innehåll och sluttag</div>' : '<div class="fail">❌ Nav-länkar saknar starttag, innehåll eller sluttag</div>');
+      const hasMin = aPairs.length >= 3;
+      const textOk = aPairs.every(a => TU.stripTags(a).length > 0);
+      const hrefOk = aPairs.every(a => /\bhref\s*=\s*("[^"]+"|'[^']+')/i.test(a));
+      const ok = hasMin && textOk && hrefOk;
+      results12.push(
+        ok
+          ? '<div class="pass">✔️ Nav-länkar har starttag, href, innehåll och sluttag (minst 3)</div>'
+          : '<div class="fail">❌ Nav-länkar saknar href, innehåll, sluttag eller är färre än 3</div>'
+      );
     } else {
       results12.push('<div class="fail">❌ nav saknas eller är inte korrekt stängd</div>');
     }

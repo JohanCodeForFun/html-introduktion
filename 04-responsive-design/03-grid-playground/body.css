@@ -1,0 +1,13 @@
+:root {
+  --color-bg: #fefae0;
+  --color-text: #222222;
+  --color-div-text: #fefae0;
+  --color-border: #283618;
+  --color-odd: #606c38;
+  --color-even: #dda15e;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}

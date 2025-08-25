@@ -1,0 +1,87 @@
+:root {
+  --color-bg: #222;
+  --color-surface: #2f4f4f;
+
+  --color-text: whitesmoke;
+  --color-text-muted: #bbb;
+
+  --color-accent-primary: mediumseagreen;
+  --color-accent-secondary: steelblue;
+  --color-accent-warm: tomato;
+  --color-accent-gold: goldenrod;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.container {
+  border: 1px solid var(--color-accent-gold);
+  height: 500px;
+  width: 500px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* 
+  FLEXBOX
+*/
+
+.item {
+  height: 100px;
+  width: 100px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-accent-primary);
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.item-1 {
+  align-self: flex-end;
+  flex-shrink: 1;
+}
+.item-2 {
+  flex: 5;
+  align-self: flex-start;
+}
+.item-3 {
+  flex: 3;
+  align-self: flex-end;
+}
+
+.child-container {
+  display: flex;
+  background-color: var(--color-accent-gold);
+  color: var(--color-bg);
+  gap: 0.3rem;
+}
+
+.child {
+  border: 3px solid var(--color-accent-warm);
+}
+
+.child-1,
+.child-2 {
+  flex: 1;
+}
+
+/* 
+  GRID
+*/

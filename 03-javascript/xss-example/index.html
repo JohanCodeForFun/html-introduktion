@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>XSS Example</title>
+  </head>
+  <body>
+    <h1>Cross Site Scripting Example</h1>
+    <section>
+      <form id="updatePageForm">
+        <label for="userInput">User input</label>
+        <input type="text" id="userInput" name="userInput" />
+        <input type="submit" value="Update website" />
+      </form>
+    </section>
+    <section id="userOutput"></section>
+  </body>
+</html>

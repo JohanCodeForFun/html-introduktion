@@ -1,0 +1,31 @@
+body {
+  /* background-color: #333; */
+  background-image: url("image.png");
+  /* background-position: 150px; */
+  /* background-size: cover; */
+}
+
+section {
+  border: 3px dashed black;
+  margin: 50px 20px;
+  margin-bottom: 100px;
+  /* border-color: black;
+  border-radius: 1rem;
+  border-bottom: 12px;
+  border-style: dashed; */
+}
+
+.title {
+  color: blue;
+  font-size: 80px;
+}
+p {
+  color: yellow;
+  font-size: 3rem;
+  width: 845px;
+}
+#title-description {
+  color: yellowgreen;
+  font-size: 3rem;
+  width: 845px;
+}

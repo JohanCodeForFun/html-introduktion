@@ -1,0 +1,8 @@
+.product-price-container {
+  display: flex;
+  gap: 1rem;
+
+  align-items: center;
+
+  height: 40px;
+}

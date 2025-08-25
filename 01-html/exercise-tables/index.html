@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tables</title>
+  </head>
+  <!-- 
+  Tabeller
+    • För tabell-data använder vi <table>-elementet
+    • För en rad används <tr>
+    • För rubrik/header i en rad används <th>
+    • För data i en rad används <td>
+
+        <thead>, <tbody> & <tfoot> kan användas för att gruppera delar
+        av tabellen
+    • Elementen används som barn till <table> och måste innehålla en
+        eller flera <tr>
+
+    Övning: Tabeller
+        X Börja med att göra en tabell med fritt innehåll
+        X Förslagsvis 4*4
+        • Lägg till tabellhuvud
+        • Dela in tabellen med thead, tbody, tfoot
+        • Testa att slå ihop 2 kolumner horisontellt (colspan)
+        • Testa att slå ihop 2 kolumner vertikalt (rowspan)
+ -->
+  <body>
+    <h1>Övning: Tabeller</h1>
+    <table border="1">
+      <tr>
+        <th>Datum</th>
+        <th>Måndag</th>
+        <th>Onsdag</th>
+        <th>Fredag</th>
+      </tr>
+      <tr>
+        <td rowspan="4">11/8/2025</td>
+        <td>Html intro</td>
+        <td>lorem</td>
+        <td>Handledning</td>
+      </tr>
+      <tr>
+        <td>HTML forts</td>
+        <td>Rad 1</td>
+        <td>Handledning</td>
+      </tr>
+      <tr>
+        <td>JavaScript</td>
+        <td>lorem</td>
+        <td>Handledning</td>
+      </tr>
+      <tr>
+        <td>JavaScript</td>
+        <td>Rad 1</td>
+        <td>Handledning</td>
+      </tr>
+
+      <tr>
+        <td colspan="3">Total studie tid:</td>
+        <td colspan="1">40 timmar</td>
+      </tr>
+    </table>
+  </body>
+</html>

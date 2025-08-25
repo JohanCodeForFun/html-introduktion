@@ -10,6 +10,10 @@ const description =
 // Det går även att uppdatera direkt utan variabel
 document.querySelector("#hero-title").textContent =
   "Första lektion JavaScript 2025!";
+document.querySelector("#hero-title").textContent = "lektion!";
+document.querySelector("#hero-title").textContent = "Första!";
+document.querySelector("#hero-title").textContent =
+  "Första lektion JavaScript 2025!";
 
 const paragraph = document.createElement("p");
 paragraph.textContent = description;

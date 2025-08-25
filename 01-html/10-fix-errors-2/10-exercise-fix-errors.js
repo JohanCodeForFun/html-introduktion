@@ -43,6 +43,15 @@ const results10 = [];
       ? '<div class="pass">✔️ första img i första section har giltig src och alt</div>'
       : '<div class="fail">❌ första img i första section saknar giltig src eller alt</div>');
 
+    // code -> strong: Använd inte <code> för att markera vikt / prisinfo i denna övning
+    if (/<code\b[\s\S]*?<\/code>/i.test(section)) {
+      results10.push('<div class="fail">❌ Använd inte &lt;code&gt; här – byt till &lt;strong&gt; för semantisk betonad text</div>');
+    } else if (/<strong\b/i.test(section)) {
+      results10.push('<div class="pass">✔️ Använder &lt;strong&gt; för betoning istället för &lt;code&gt;</div>');
+    } else {
+      results10.push('<div class="fail">❌ Ingen betoning hittad – använd &lt;strong&gt; istället för &lt;code&gt;</div>');
+    }
+
     // button: minst en med innehåll
     if (TU.hasPair(section, 'button')) {
       const btnInner = TU.firstPairInner(section, 'button');

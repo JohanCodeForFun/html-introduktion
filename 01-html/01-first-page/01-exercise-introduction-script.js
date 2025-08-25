@@ -12,8 +12,8 @@ function testElement(tag, expectedCount) {
       `<div class="fail">&lt;${tag}&gt;: ❌ Hittade ${count}, förväntade ${expectedCount}</div>`
     );
   }
-  // Testa att elementet inte är tomt
-  if (tag === "h1" || tag === "p") {
+  // Testa att elementet inte är tomt (endast om minst ett hittades)
+  if ((tag === "h1" || tag === "p") && count > 0) {
     let emptyCount = 0;
     for (let el of elements) {
       if (!el.textContent.trim()) emptyCount++;

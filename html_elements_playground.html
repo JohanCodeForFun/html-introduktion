@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML Elements Playground</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f9f9f9;
+      }
+      h1,
+      h2 {
+        color: #333;
+      }
+      section {
+        background: white;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      code {
+        background: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+      }
+      nav a {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HTML Elements Playground</h1>
+
+    <section>
+      <h2>1. Basic Structure</h2>
+      <p>This section is already within a valid HTML document.</p>
+    </section>
+
+    <section>
+      <h2>2. Text Formatting</h2>
+      <p>This is <strong>important</strong> and this is <em>emphasized</em>.</p>
+      <p><b>Bold</b> vs <i>Italic</i> without semantic meaning.</p>
+      <p><mark>Highlighted text</mark> for emphasis.</p>
+      <p>Here is <code>inline code()</code> and a line break<br />See?</p>
+    </section>
+
+    <section>
+      <h2>3. Links & Media</h2>
+      <a
+        href="https://unsplash.com/photos/selective-focus-photography-of-pink-petaled-flower-EfhCUc_fjrU"
+        target="_blank"
+        >Visit Example</a
+      ><br /><br />
+
+      <img
+        src="https://images.unsplash.com/photo-1471899236350-e3016bf1e69e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Sample Image"
+        width="230"
+      /><br /><br />
+      <p>image by: Andrew Small</p>
+      <audio controls>
+        <source
+          src="https://www.w3schools.com/html/horse.mp3"
+          type="audio/mpeg"
+        /></audio
+      ><br /><br />
+      <video controls width="300">
+        <source
+          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </section>
+
+    <section>
+      <h2>4. Lists</h2>
+      <ul>
+        <li>Apples</li>
+        <li>Bananas</li>
+      </ul>
+      <ol>
+        <li>First</li>
+        <li>Second</li>
+      </ol>
+      <dl>
+        <dt>HTML</dt>
+        <dd>Markup language for the web.</dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>5. Tables</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Alice</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>Bob</td>
+            <td>30</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>6. Forms</h2>
+      <form action="#" method="post">
+        <label for="name">Name:</label>
+        <input id="name" type="text" name="name" /><br /><br />
+
+        <label for="message">Message:</label><br />
+        <textarea id="message" name="message"></textarea><br /><br />
+
+        <label for="color">Choose color:</label>
+        <select id="color" name="color">
+          <option value="red">Red</option>
+          <option value="blue">Blue</option></select
+        ><br /><br />
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>7. Layout</h2>
+      <header>
+        <h1>My Website</h1>
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+        </nav>
+      </header>
+      <main>
+        <section>
+          <h2>Section Title</h2>
+          <p>Some content here.</p>
+        </section>
+        <aside>
+          <p>Sidebar content</p>
+        </aside>
+      </main>
+      <footer>
+        <p>&copy; 2025 My Website</p>
+      </footer>
+    </section>
+
+    <section>
+      <h2>8. Styling & Scripting</h2>
+      <p>Click the button below to trigger JavaScript:</p>
+      <button onclick="alert('Hello from JavaScript!')">Click Me</button>
+    </section>
+  </body>
+</html>

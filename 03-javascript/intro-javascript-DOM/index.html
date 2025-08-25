@@ -10,8 +10,16 @@
   <body>
     <main>
       <section id="hero-section">
-        <h1 id="hero-title"></h1>
+        <h2 id="hero-title"></h2>
       </section>
     </main>
+
+    <script>
+      // Spara hero title i variabel för återanvänding
+      const heroSection = document.querySelector("#hero-section");
+
+      const heroTitle = document.querySelector("#hero-title");
+      heroTitle.textContent = "Första lektion JavaScript!";
+    </script>
   </body>
 </html>
