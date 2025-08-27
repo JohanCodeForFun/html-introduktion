@@ -3,6 +3,9 @@
    Allt i en fil, redo att delas upp i moduler.
 ========================================= */
 
+import { add, average } from "./utils/mathUtils.js";
+import { capitalize, slugify, formatPercent } from "./utils/utils.js";
+
 // ---------- State ----------
 let state = {
   todos: [
@@ -10,39 +13,6 @@ let state = {
     { id: uid(), text: "Bryta ut utils till moduler", done: true },
   ],
 };
-
-// ---------- Utils ----------
-function add(a, b) {
-  a = Number(a);
-  b = Number(b);
-  if (Number.isNaN(a) || Number.isNaN(b)) return NaN;
-  return a + b;
-}
-
-function average(arr) {
-  const nums = arr.map(Number).filter((n) => !Number.isNaN(n));
-  return nums.length ? nums.reduce((s, n) => s + n, 0) / nums.length : NaN;
-}
-
-function capitalize(s) {
-  if (!s) return "";
-  return s[0].toUpperCase() + s.slice(1);
-}
-
-function slugify(s) {
-  return String(s)
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-}
-
-function formatPercent(value, total) {
-  if (!total) return "0%";
-  return Math.round((value / total) * 100) + "%";
-}
 
 // ---------- Services ----------
 function save(key, value) {
