@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Exempel – Kortlista</title>
+    <style>
+      :root {
+        font-family: system-ui, sans-serif;
+      }
+      body {
+        margin: 0;
+        padding: 2rem;
+        background: #f7f7f8;
+        color: #111;
+      }
+      .grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+      .card {
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 16px;
+        padding: 1rem;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+      }
+      .title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 0 0 0.25rem;
+      }
+      .price {
+        font-weight: 700;
+        margin: 0.25rem 0 0.75rem;
+      }
+      .desc {
+        color: #444;
+        margin: 0.25rem 0 0.75rem;
+      }
+      .tag {
+        display: inline-block;
+        font-size: 0.75rem;
+        background: #eef2ff;
+        color: #3730a3;
+        padding: 0.25rem 0.5rem;
+        border-radius: 999px;
+      }
+      .btn {
+        display: inline-block;
+        margin-top: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: 10px;
+        border: 1px solid #111;
+        background: #111;
+        color: #fff;
+        text-decoration: none;
+      }
+      header {
+        margin-bottom: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Våra paket</h1>
+      <p>Välj det paket som passar dig bäst.</p>
+    </header>
+
+    <section class="grid">
+      <article class="card">
+        <span class="tag">Populär</span>
+        <h2 class="title">Starter</h2>
+        <p class="price">99 kr/mån</p>
+        <p class="desc">Perfekt för att komma igång.</p>
+        <a class="btn" href="#">Välj Starter</a>
+      </article>
+
+      <article class="card">
+        <span class="tag">Bäst värde</span>
+        <h2 class="title">Pro</h2>
+        <p class="price">199 kr/mån</p>
+        <p class="desc">Mer kraft och flexibilitet.</p>
+        <a class="btn" href="#">Välj Pro</a>
+      </article>
+
+      <article class="card">
+        <span class="tag">Avancerat</span>
+        <h2 class="title">Enterprise</h2>
+        <p class="price">Kontakta oss</p>
+        <p class="desc">Skräddarsydda lösningar för team.</p>
+        <a class="btn" href="#">Kontakta sälj</a>
+      </article>
+    </section>
+  </body>
+</html>
