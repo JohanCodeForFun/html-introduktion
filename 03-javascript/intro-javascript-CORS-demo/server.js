@@ -7,7 +7,7 @@ const PORT = 3000;
 // Tillåt endast anrop från en specifik origin (t.ex. http://127.0.0.1:5500)
 app.use(
   cors({
-    origin: "http://127.0.0.1:5503", // byt till där din index.html körs ifrån
+    origin: "http://127.0.0.1:5501", // byt till där din index.html körs ifrån
   })
 );
 

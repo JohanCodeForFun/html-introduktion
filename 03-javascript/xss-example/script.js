@@ -18,17 +18,26 @@ updatePageForm.addEventListener("submit", (event) => {
 });
 
 function updateHTML(input) {
-  const userOutputSection = document.getElementById("userOutput");
+  // usage
+  if (isUnsafe(input)) {
+    // reject input or sanitize/escape before inserting into the DOM
+    console.warn("Potential XSS detected — input rejected");
+    alert("Potential XSS detected — input rejected");
+  } else {
+    // safe to proceed (or still escape before injecting)
 
-  // återställ user output html varje gång funktion körs
-  userOutputSection.innerHTML = "";
+    const userOutputSection = document.getElementById("userOutput");
 
-  const paragraph = document.createElement("p");
-  paragraph.innerHTML = input;
+    // återställ user output html varje gång funktion körs
+    userOutputSection.innerHTML = "";
 
-  userOutputSection.appendChild(paragraph);
+    const paragraph = document.createElement("p");
+    paragraph.innerHTML = input;
 
-  console.log("log input in updateHTML:", input);
+    userOutputSection.appendChild(paragraph);
+
+    console.log("log input in updateHTML:", input);
+  }
 }
 
 /* 
@@ -46,12 +55,4 @@ const xssPattern =
 
 function isUnsafe(input) {
   return xssPattern.test(input);
-}
-
-// usage
-if (isUnsafe(userInput)) {
-  // reject input or sanitize/escape before inserting into the DOM
-  console.warn("Potential XSS detected — input rejected");
-} else {
-  // safe to proceed (or still escape before injecting)
 }
