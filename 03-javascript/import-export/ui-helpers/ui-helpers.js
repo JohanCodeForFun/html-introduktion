@@ -1,4 +1,4 @@
-import { state } from "../script.js";
+import { state } from "./init.js";
 import { qs } from "./helpers.js";
 import { formatPercent } from "../utils/utils.js";
 

@@ -1,5 +1,15 @@
-import { qs } from "./helpers.js";
+import { qs, uid } from "./helpers.js";
 import { renderTodos, renderStateDump } from "./ui-helpers.js";
+import { add, average } from "../utils/mathUtils.js";
+import { slugify, capitalize } from "../utils/utils.js";
+import { load, save } from "../services/services.js";
+
+export let state = {
+  todos: [
+    { id: uid(), text: "Lära mig ESM", done: false },
+    { id: uid(), text: "Bryta ut utils till moduler", done: true },
+  ],
+};
 
 export function initUI() {
   // Todo
