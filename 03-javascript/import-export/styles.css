@@ -1,0 +1,75 @@
+:root {
+  font-family: system-ui, sans-serif;
+}
+body {
+  margin: 0;
+  padding: 24px;
+  background: #f7f7f8;
+  color: #111;
+}
+h1 {
+  margin: 0 0 8px;
+}
+.app {
+  display: grid;
+  gap: 16px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 16px;
+}
+.row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+input,
+button {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+button {
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px dashed #eee;
+}
+.muted {
+  color: #666;
+}
+.tag {
+  font-size: 0.75rem;
+  background: #eef2ff;
+  color: #3730a3;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+pre {
+  margin: 0;
+  background: #0b1020;
+  color: #e4e8ff;
+  padding: 12px;
+  border-radius: 12px;
+  overflow: auto;
+}

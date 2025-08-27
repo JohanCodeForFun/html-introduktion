@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JS-övning – från monolit till moduler</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <h1>JS-övning: organisera kod med import/export</h1>
+        <p class="muted">
+          Börja med en enda scriptfil. Refaktorera sedan till ES-moduler.
+        </p>
+      </header>
+
+      <section class="grid">
+        <div class="card">
+          <h2>Todo-lista <span class="tag">DOM</span></h2>
+          <div class="row">
+            <input id="todo-input" placeholder="Lägg till uppgift..." />
+            <button id="todo-add">Lägg till</button>
+            <input id="todo-filter" placeholder="Filtrera..." />
+            <button id="todo-clear">Rensa allt</button>
+          </div>
+          <ul id="todo-list"></ul>
+          <p class="muted" id="todo-stats"></p>
+        </div>
+
+        <div class="card">
+          <h2>Beräkningar <span class="tag">utils</span></h2>
+          <div class="row">
+            <input id="num-a" type="number" placeholder="tal A" />
+            <input id="num-b" type="number" placeholder="tal B" />
+            <button id="calc-sum">Summera</button>
+            <button id="calc-avg">Medel</button>
+          </div>
+          <p id="calc-out" class="muted"></p>
+        </div>
+
+        <div class="card">
+          <h2>Strängverktyg <span class="tag">utils</span></h2>
+          <div class="row">
+            <input id="str-in" placeholder="Skriv en rubrik..." />
+            <button id="slugify-btn">Slugify</button>
+            <button id="capitalize-btn">Capitalize</button>
+          </div>
+          <p id="str-out" class="muted"></p>
+        </div>
+
+        <div class="card">
+          <h2>“API”/Storage <span class="tag">service</span></h2>
+          <div class="row">
+            <button id="dump-state">Visa state</button>
+            <button id="save-state">Spara i localStorage</button>
+            <button id="load-state">Ladda från localStorage</button>
+          </div>
+          <pre id="state-out"></pre>
+        </div>
+      </section>
+
+      <footer class="muted">
+        Tips: När ni refaktorerar, byt i denna fil till
+        <code>&lt;script type="module" src="main.js"&gt;</code>
+        och skapa riktiga moduler.
+      </footer>
+    </div>
+
+    <!-- Startläge: EN enda scriptfil -->
+    <script src="app.js" defer></script>
+  </body>
+</html>

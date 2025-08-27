@@ -1,0 +1,14 @@
+{
+  "name": "npm-demo",
+  "version": "0.0.2",
+  "description": "Demo av npm användning",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Johan Hellberg",
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^11.1.0"
+  }
+}
