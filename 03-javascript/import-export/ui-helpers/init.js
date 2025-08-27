@@ -3,13 +3,7 @@ import { renderTodos, renderStateDump } from "./ui-helpers.js";
 import { add, average } from "../utils/mathUtils.js";
 import { slugify, capitalize } from "../utils/utils.js";
 import { load, save } from "../services/services.js";
-
-export let state = {
-  todos: [
-    { id: uid(), text: "Lära mig ESM", done: false },
-    { id: uid(), text: "Bryta ut utils till moduler", done: true },
-  ],
-};
+import { state } from "./state.js";
 
 export function initUI() {
   // Todo
@@ -51,7 +45,9 @@ export function initUI() {
   });
   qs("#load-state").addEventListener("click", () => {
     const loaded = load("appState");
-    if (loaded) state = loaded;
+    if (loaded) {
+      Object.assign(state, loaded);
+    }
     renderTodos();
     renderStateDump("Laddat ✅");
   });
